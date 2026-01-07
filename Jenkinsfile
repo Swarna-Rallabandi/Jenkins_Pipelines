@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'java-slave'
+        label 'slave1'
     }
     stages {
         stage ("maven app"){
