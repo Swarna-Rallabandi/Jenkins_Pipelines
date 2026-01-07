@@ -1,9 +1,9 @@
 pipeline {
-    agebt {
+    agent {
         label 'java-slave'
     }
     stages {
-        stage {
+        stage ("maven app"){
             steps {
                 echo "** building maven application"
             }
@@ -25,6 +25,11 @@ pipeline {
             stage ("deploytoprod"){
                 steps {
                     echo "deploy to prod"
+                    input{
+                        message "doing prod deployment"
+                        ok "yes"
+                        submitter "abc"
+                    }
                 }
             }
         }
