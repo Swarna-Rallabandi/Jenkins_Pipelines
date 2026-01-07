@@ -3,7 +3,7 @@ pipeline {
         label 'slave1'
     }
     stages {
-        stage ("maven app"){
+        stage ('build'){
             steps {
                 echo "** building maven application"
             }
